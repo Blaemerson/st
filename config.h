@@ -9,7 +9,7 @@ static char *font = "monospace:pixelsize=14:antialias=true:autohint=true";
 /* static char *font2[] = {
  * "JoyPixels:pixelsize=11:antialias=true:autohint=true" }; */
 static char *font2[] = {
-    "HackNerdFont:pixelsize=12:antialias=true:autohint=true"};
+    "monospace:pixelsize=12:antialias=true:autohint=true"};
 static int borderpx = 2;
 
 /*
@@ -110,7 +110,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.95;
+float alpha = 0.8;
 
 // HERE
 static const char *colorname[] = {
@@ -235,16 +235,16 @@ static MouseShortcut mshortcuts[] = {
     {XK_ANY_MOD, Button5, ttysend, {.s = "\005"}},
 };
 
-/* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
-#define TERMMOD (ControlMask | ShiftMask)
-
 static char *openurlcmd[] = {"/bin/sh", "-c", "st-urlhandler -o",
                              "externalpipe", NULL};
 static char *copyurlcmd[] = {"/bin/sh", "-c", "st-urlhandler -c",
                              "externalpipe", NULL};
 static char *copyoutput[] = {"/bin/sh", "-c", "st-copyout", "externalpipe",
                              NULL};
+
+/* Internal keyboard shortcuts. */
+#define MODKEY Mod1Mask
+#define TERMMOD (ControlMask | ShiftMask)
 
 static Shortcut shortcuts[] = {
     /* mask                 keysym          function        argument */
